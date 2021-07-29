@@ -243,7 +243,7 @@ class _HomePageState extends State<HomePage>
 
     _positionStream = Geolocator.getPositionStream(
             desiredAccuracy: LocationAccuracy.high,
-            intervalDuration: Duration(seconds: 1))
+            intervalDuration: Duration(seconds: 10))
         .listen((Position userPosition) {
       if (userPosition != null) {
         position = userPosition;
