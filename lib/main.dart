@@ -527,8 +527,12 @@ class _HomePageState extends State<HomePage>
                       ),
                       Expanded(
                         child: TextField(
-                          keyboardType: TextInputType.numberWithOptions(),
-                          inputFormatters: [],
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(
+                                RegExp(r"^\d+\.?\d{0,7}"))
+                          ],
                           controller: latEditingController,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -564,8 +568,13 @@ class _HomePageState extends State<HomePage>
                       ),
                       Expanded(
                         child: TextField(
-                          keyboardType: TextInputType.numberWithOptions(),
+                          keyboardType:
+                              TextInputType.numberWithOptions(decimal: true),
                           controller: longEditingController,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(
+                                RegExp(r"^\d+\.?\d{0,7}"))
+                          ],
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20),
